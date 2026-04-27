@@ -1,6 +1,7 @@
 import "./globals.css";
 import Navbar from "./navbar/page";
 import Footer from "@/components/footer";
+import { MenuProvider } from "@/context/menuContext";
 
 export const metadata = {
   title: "Abhishek Gupta | Frontend Engineer",
@@ -14,10 +15,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="bg-black text-white">
-        <Navbar />
-
-        <div className="pt-20">{children}</div>
-        <Footer />
+        <MenuProvider>
+          <Navbar />
+          <div className="pt-20">{children}</div>
+          <Footer />
+        </MenuProvider>
       </body>
     </html>
   );

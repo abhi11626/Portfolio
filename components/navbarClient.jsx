@@ -3,8 +3,9 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
 import { User, Layers, Folder, Mail, Menu, X } from "lucide-react";
+import { useMenu } from "@/context/menuContext";
+import { useEffect } from "react";
 
 const navItems = [
   { name: "About", href: "/about", icon: User },
@@ -15,7 +16,20 @@ const navItems = [
 
 export default function NavbarClient() {
   const pathname = usePathname();
-  const [open, setOpen] = useState(false);
+  const { open, setOpen } = useMenu();
+
+  // ✅ Scroll lock when menu opens
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [open]);
 
   return (
     <>
@@ -51,7 +65,7 @@ export default function NavbarClient() {
       {/* MOBILE BUTTON */}
       <button
         onClick={() => setOpen(!open)}
-        className="md:hidden relative z-50"
+        className="md:hidden relative z-10000"
       >
         <AnimatePresence mode="wait">
           {open ? (
@@ -86,7 +100,7 @@ export default function NavbarClient() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setOpen(false)}
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-9998"
             />
 
             {/* SLIDE PANEL */}
@@ -95,9 +109,9 @@ export default function NavbarClient() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", stiffness: 260, damping: 25 }}
-              className="fixed top-0 right-0 h-full w-72 bg-black border-l border-gray-800 z-50 p-6"
+              className="fixed top-0 right-0 h-full w-72 bg-black border-l border-gray-800 z-9999 p-6"
             >
-              <nav className="flex flex-col gap-6 mt-16">
+              <nav className="flex flex-col mt-16 divide-y divide-gray-800">
                 {navItems.map((item) => {
                   const isActive = pathname.startsWith(item.href);
                   const Icon = item.icon;
@@ -110,8 +124,14 @@ export default function NavbarClient() {
                     >
                       <motion.div
                         whileHover={{ x: 5 }}
-                        className={`flex items-center gap-3 text-lg
-                          ${isActive ? "text-white" : "text-gray-400"}
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        className={`flex items-center gap-3 py-4 text-base tracking-wide font-medium transition-all
+                          ${
+                            isActive
+                              ? "text-white"
+                              : "text-gray-400 hover:text-white"
+                          }
                         `}
                       >
                         <Icon size={18} />

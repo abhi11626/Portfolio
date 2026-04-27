@@ -4,10 +4,16 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Download } from "lucide-react";
-
+import { useMenu } from "@/context/menuContext";
 export default function Hero() {
+  const { open } = useMenu();
+
   return (
-    <section className="flex flex-col-reverse md:flex-row items-center justify-between px-4 sm:px-6 md:px-12 lg:px-20 py-16 md:py-20 gap-8 md:gap-12">
+    <section
+      className={`relative z-0 transition-all duration-300 flex flex-col-reverse md:flex-row items-center justify-between px-4 sm:px-6 md:px-12 lg:px-20 py-16 md:py-20 gap-8 md:gap-12 ${
+        open ? "blur-sm scale-[0.98]" : ""
+      }`}
+    >
       {/* LEFT CONTENT */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
