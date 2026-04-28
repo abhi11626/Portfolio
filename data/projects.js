@@ -43,6 +43,29 @@ const projects = [
         "Significantly improved rendering performance and reduced unnecessary re-renders, resulting in smoother user interactions and better responsiveness across the application.",
     },
   },
+
+  {
+    id: "tic-tac-toe",
+    title: "Tic Tac Toe Game",
+    description:
+      "Interactive 2-player game with win detection and reset functionality",
+    tech: ["React", "JavaScript", "CSS"],
+    liveUrl: "https://tic-tac-toe-iota-nine-37.vercel.app/",
+    githubUrl: "https://github.com/abhi11626/Tic-Tac-Toe-",
+    caseStudy: {
+      problem:
+        "Building game logic for detecting win conditions, handling player turns, and managing game state in a clean and reusable way was challenging in a component-based structure.",
+
+      solution:
+        "Implemented a structured state management approach to track game board state, player turns, and game status. Created reusable functions for move handling and win condition checks.",
+
+      architecture:
+        "Built using a component-based React architecture with centralized game state logic. Separated UI rendering from game logic for better readability and maintainability.",
+
+      impact:
+        "Delivered a fully interactive browser-based game with smooth state transitions, accurate win detection, and a clean user experience.",
+    },
+  },
 ];
 
 export default projects;
