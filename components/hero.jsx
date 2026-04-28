@@ -9,11 +9,7 @@ export default function Hero() {
   const { open } = useMenu();
 
   return (
-    <section
-      className={`relative z-0 transition-all duration-300 flex flex-col-reverse md:flex-row items-center justify-between px-4 sm:px-6 md:px-12 lg:px-20 py-16 md:py-20 gap-8 md:gap-12 ${
-        open ? "blur-sm scale-[0.98]" : ""
-      }`}
-    >
+    <section className="relative z-0 transition-all duration-300 flex flex-col-reverse md:flex-row items-center justify-between px-4 sm:px-6 md:px-12 lg:px-20 py-16 md:py-20 gap-8 md:gap-12">
       {/* LEFT CONTENT */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}

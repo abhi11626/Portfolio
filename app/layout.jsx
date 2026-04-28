@@ -2,6 +2,7 @@ import "./globals.css";
 import Navbar from "./navbar/page";
 import Footer from "@/components/footer";
 import { MenuProvider } from "@/context/menuContext";
+import BlurWrapper from "@/UI/BlurWrapper";
 
 export const metadata = {
   title: "Abhishek Gupta | Frontend Engineer",
@@ -17,8 +18,10 @@ export default function RootLayout({ children }) {
       <body className="bg-black text-white">
         <MenuProvider>
           <Navbar />
-          <div className="pt-20">{children}</div>
-          <Footer />
+          <BlurWrapper>
+            <div className="pt-20">{children}</div>
+            <Footer />
+          </BlurWrapper>
         </MenuProvider>
       </body>
     </html>

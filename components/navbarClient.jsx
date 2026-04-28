@@ -126,7 +126,7 @@ export default function NavbarClient() {
                         whileHover={{ x: 5 }}
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
-                        className={`flex items-center gap-3 py-4 text-base tracking-wide font-medium transition-all
+                        className={`flex items-center gap-3 py-4 text-base tracking-wide font-semibold transition-all
                           ${
                             isActive
                               ? "text-white"
