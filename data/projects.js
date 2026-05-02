@@ -66,6 +66,29 @@ const projects = [
         "Delivered a fully interactive browser-based game with smooth state transitions, accurate win detection, and a clean user experience.",
     },
   },
+
+  {
+    id: "stock-screener",
+    title: "Stock Screener",
+    description:
+      "Real-time stock filtering with debounced search and optimized API handling",
+    tech: ["React", "Next.js", "API Integration", "JavaScript", "CSS"],
+    liveUrl: "https://stock-screener-beta-cyan.vercel.app/",
+    githubUrl: "https://www.github.com/abhi11626",
+    caseStudy: {
+      problem:
+        "Frequent API calls triggered by user input (search and filters) caused unnecessary network requests and UI lag. Managing dynamic stock data with multiple filters also increased complexity in state handling and rendering performance.",
+
+      solution:
+        "Implemented a debouncing mechanism for search and filter inputs to limit API calls and prevent excessive re-renders. Structured state updates efficiently to ensure smooth UI performance while handling real-time stock data.",
+
+      architecture:
+        "Built with a modular React architecture separating concerns between data fetching, filtering logic, and UI. Introduced debounced input handling and reusable components for filters and stock display, ensuring scalability and maintainability.",
+
+      impact:
+        "Reduced unnecessary API calls and improved application responsiveness. Achieved smoother user interactions with optimized rendering, making the stock screening experience faster and more efficient.",
+    },
+  },
 ];
 
 export default projects;
