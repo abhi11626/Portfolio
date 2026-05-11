@@ -4,7 +4,7 @@ const projects = [
     title: "E-Commerce Platform",
     description:
       "Optimized performance using lazy loading and TanStack Query caching",
-    tech: ["React", "Router", "TanStack Query"],
+    tech: ["React", "Router", "TanStack Query", "Context API", "Tailwind CSS"],
     liveUrl: "https://e-commerce-frontend-one-lemon.vercel.app",
     githubUrl: "https://www.github.com/abhi11626",
     caseStudy: {
@@ -41,6 +41,41 @@ const projects = [
 
       impact:
         "Significantly improved rendering performance and reduced unnecessary re-renders, resulting in smoother user interactions and better responsiveness across the application.",
+    },
+  },
+
+  {
+    id: "job-portal",
+    title: "Job Portal Dashboard",
+    description:
+      "Built a modern job portal with authentication, protected routes, filtering, and optimized frontend state management.",
+
+    tech: [
+      "React.js",
+      "React Router DOM",
+      "TanStack Query",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Context API",
+      "MockAPI",
+    ],
+
+    liveUrl: "https://job-dashboard-eight-puce.vercel.app/",
+
+    githubUrl: "https://github.com/abhi11626",
+
+    caseStudy: {
+      problem:
+        "The application required authentication-based job applications, dynamic job listings, filtering, and protected user flows. Managing modal behavior, authentication state, and scalable UI components became challenging as features increased.",
+
+      solution:
+        "Implemented Context API authentication with protected routes and conditional UI rendering. Added authentication checks before opening the apply modal to improve user experience and security flow. Built reusable UI components using shadcn/ui and Tailwind CSS for consistency and scalability.",
+
+      architecture:
+        "Designed the application using a component-driven architecture with reusable layouts, protected route wrappers, modular pages, and centralized authentication state management. Integrated TanStack Query for scalable server-state handling and MockAPI for simulating backend APIs during frontend development.",
+
+      impact:
+        "Improved overall application scalability, cleaner authentication flow, and better user experience. The modular architecture allows easy feature expansion such as saved jobs, recruiter dashboards, and real backend integration in the future.",
     },
   },
 
