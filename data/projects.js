@@ -80,6 +80,45 @@ const projects = [
   },
 
   {
+    id: "taskflow-dashboard",
+
+    title: "TaskFlow - Task Management Dashboard",
+
+    description:
+      "Modern Task Management Dashboard built with React 19, TypeScript, Tailwind CSS, TanStack Query, and AI-assisted development.",
+
+    tech: [
+      "React 19",
+      "TypeScript",
+      "Vite",
+      "TanStack Query",
+      "Axios",
+      "Tailwind CSS v4",
+      "React Router",
+      "Local Storage",
+      "React Hooks",
+    ],
+
+    liveUrl: "https://react-task-dashboard-rnnl.vercel.app/",
+
+    githubUrl: "https://github.com/abhi11626/React-Task-Dashboard",
+
+    caseStudy: {
+      problem:
+        "Task management applications often become difficult to maintain as features such as search, filtering, pagination, bulk actions, and state synchronization grow in complexity. The challenge was to build a scalable dashboard that delivers a smooth user experience while keeping the codebase maintainable and extensible.",
+
+      solution:
+        "Developed TaskFlow using a feature-driven architecture with React 19 and TypeScript. Implemented task CRUD operations, debounced search, advanced filtering, sorting, client-side pagination, bulk actions, dark mode, and local storage persistence. Leveraged TanStack Query with optimistic updates to provide instant UI feedback and improve perceived performance.",
+
+      architecture:
+        "Designed the application around feature encapsulation, separating tasks into dedicated modules containing pages, components, hooks, APIs, and types. Integrated TanStack Query for server-state management, Axios for API communication, reusable custom hooks for debouncing and persistence, and route-level code splitting using React.lazy. Applied TypeScript strict mode and accessibility best practices to improve reliability and maintainability.",
+
+      impact:
+        "Delivered a highly responsive and scalable dashboard with faster task discovery through debounced search and filtering, improved user experience through optimistic updates, and better long-term maintainability through modular architecture. The foundation supports future enhancements such as real backend integration, team collaboration, server-side pagination, and automated testing.",
+    },
+  },
+
+  {
     id: "tic-tac-toe",
     title: "Tic Tac Toe Game",
     description:
